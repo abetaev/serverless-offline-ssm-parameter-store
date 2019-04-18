@@ -8,12 +8,17 @@ const readFile = (path) =>
       return acc;
     }, {});
 
-class ServerlessOfflineSSMParameterStore {
+module.exports = class {
   constructor(serverless) {
+    const commands = serverless.processedInput.commands
+    if (!(commands[0] === 'offline' && commands[1] === 'start')) {
+      return
+    } 
+
     const config = serverless.service.custom['ssm-parameter-store'];
 
     const values = Object.assign(
-      {}, 
+      {},
       config.parameters,
       config.file ? readFile(config.file) : {}
     )
@@ -39,7 +44,8 @@ class ServerlessOfflineSSMParameterStore {
     };
 
     serverless.setProvider('aws', aws);
+
+    serverless.cli.log('Offline SSM parameters loaded.')
+
   }
 }
-
-module.exports = ServerlessOfflineSSMParameterStore;
