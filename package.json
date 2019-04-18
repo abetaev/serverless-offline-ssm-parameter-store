@@ -1,0 +1,34 @@
+{
+  "author": {
+    "name": "abetaev"
+  },
+  "bugs": {
+    "url": "https://github.com/abetaev/serverless-offline-ssm-parameter-store/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "lodash": "^4.17.10"
+  },
+  "deprecated": false,
+  "description": "serverless plugin to support offline development of features dependent on SSM parameter store",
+  "files": [
+    "src/index.js"
+  ],
+  "homepage": "https://github.com/abetaev/serverless-offline-ssm-parameter-store",
+  "keywords": [
+    "serverless",
+    "plugin",
+    "offline",
+    "aws",
+    "ssm",
+    "parameter-store"
+  ],
+  "license": "MIT",
+  "main": "src",
+  "name": "serverless-offline-ssm-parameter-store",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/abetaev/serverless-offline-ssm-parameter-store.git"
+  },
+  "version": "1.0.0"
+}
